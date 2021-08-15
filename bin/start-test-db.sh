@@ -10,9 +10,7 @@ echo "Re-creating test database. All data of the existing database will be destr
 
 start_db() {
 	sudo docker-compose -f ../docker/test/db/docker-compose.yml up -d \
-	  && sleep 10s \
-	  && psql -h 127.0.0.1 -U postgres -f ../sql/drop-db.sql \
-	  && psql -h 127.0.0.1 -U postgres -f ../sql/create-db.sql
+	  && sleep 10s
 }
 
 while true; do

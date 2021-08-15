@@ -12,9 +12,6 @@ desired-count: auto
 
 primary-container: service
 
-# delete this line if your service does not require a database
-db: postgres
-
 containers:
   service:
     image: r.homelane.co/homelane:$BUILD_TAG
