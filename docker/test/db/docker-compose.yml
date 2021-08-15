@@ -1,3 +1,0 @@
-# Database container for running tests locally.
-version: '2'
-
