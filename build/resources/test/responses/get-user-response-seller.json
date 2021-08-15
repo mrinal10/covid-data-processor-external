@@ -1,0 +1,51 @@
+{
+  "id": 2061500700,
+  "email": "test.seller@tide.invalid",
+  "shortenedName": "Test Seller",
+  "status": "live",
+  "personType": "1",
+  "companyName": null,
+  "lastName": "Test",
+  "firstName": "Seller",
+  "phonePrefix": "+44",
+  "phone": "0000000000",
+  "birthday": "1992-02-14T00:00:00+00:00",
+  "nationality": "GB",
+  "countryOfResidence": "GB",
+  "profession": null,
+  "annualIncome": null,
+  "phoneVerified": true,
+  "emailVerified": true,
+  "idCardVerified": true,
+  "nbBookingsOfferer": 0,
+  "nbBookingsAsker": 0,
+  "averageAskerRating": null,
+  "averageOffererRating": null,
+  "motherTongue": "te",
+  "answerDelay": 0,
+  "timeZone": "Europe/London",
+  "rgpd": true,
+  "stripeBankAccountNumber": null,
+  "stripeBankAccountRoutingNumber": null,
+  "images": [
+    {
+      "id": 31,
+      "name": "1b9e5f4e816f65a65e08f60d7625013c1c5cca98.jpg",
+      "position": 0
+    }
+  ],
+  "createdAt": "2021-04-19T09:14:52+00:00",
+  "updatedAt": "2021-07-22T02:30:02+00:00",
+  "stripeAccountId": "acct_1Ihu4pPuNaDDaWpv",
+  "stripeBankAccountId": null,
+  "stripeBankAccountCountry": null,
+  "stripeBankAccountCurrency": null,
+  "stripeBankAccountHolderName": null,
+  "stripeAccountToken": "ct_1Ihu4oL7q3idygqR68BcgTIw",
+  "stripePersonToken": null,
+  "_links": {
+    "self": {
+      "href": "/api/v1/admin/users/1207131497"
+    }
+  }
+}

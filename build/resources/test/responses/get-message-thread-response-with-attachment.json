@@ -1,0 +1,39 @@
+[
+  {
+    "id": 129,
+    "body": "Hello",
+    "createdAt": "2021-07-21T08:25:22+00:00",
+    "metadata": [
+      {
+        "isRead": false,
+        "id": 256,
+        "_links": {
+          "participant": {
+            "href": "/api/v1/admin/users/2061500700"
+          }
+        }
+      },
+      {
+        "isRead": true,
+        "id": 257,
+        "_links": {
+          "participant": {
+            "href": "/api/v1/admin/users/95578902"
+          }
+        }
+      }
+    ],
+    "attachments": [
+      {
+        "id": 100,
+        "fileName":"test.txt",
+        "previewName":"preview.jpg"
+      }
+    ],
+    "_links": {
+      "sender": {
+        "href": "/api/v1/admin/users/95578902"
+      }
+    }
+  }
+]

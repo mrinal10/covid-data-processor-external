@@ -1,0 +1,137 @@
+{
+  "start": "2021-04-19T23:00:00+00:00",
+  "end": "2021-04-20T01:00:00+00:00",
+  "status": "expired",
+  "validated": false,
+  "cancellationPolicy": 2,
+  "expiredBookingAt": "2021-04-19T19:00:02+00:00",
+  "newBookingAt": "2021-04-19T10:04:11+00:00",
+  "acceptedBookingAt": null,
+  "payedBookingAt": null,
+  "refusedBookingAt": null,
+  "canceledAskerBookingAt": null,
+  "alertedExpiring": true,
+  "alertedImminent": false,
+  "message": null,
+  "timeZoneAsker": "Europe/London",
+  "timeZoneOfferer": "Europe/London",
+  "amount": 2760,
+  "amountFeeAsAsker": 0,
+  "amountFeeAsOfferer": 552,
+  "amountTotal": 2760,
+  "discount": 0,
+  "discountAmount": 0,
+  "amountPerUnit": 500,
+  "duration": 2,
+  "id": 2095662595,
+  "services": [
+    {
+      "title": "Currency exchange",
+      "description": "Currency exchange at hotel",
+      "quantity": 2,
+      "category": {
+        "name": "Accounting",
+        "headerText": null,
+        "footerText": null,
+        "metaTitle": null,
+        "metaDescription": null,
+        "slug": "accounting",
+        "id": 2,
+        "children": [
+          {
+            "name": "Comprehensive accounting",
+            "headerText": null,
+            "footerText": null,
+            "metaTitle": null,
+            "metaDescription": null,
+            "slug": "comprehensive-accounting",
+            "id": 10,
+            "children": [],
+            "media": null
+          },
+          {
+            "name": "Year end accounts",
+            "headerText": null,
+            "footerText": null,
+            "metaTitle": null,
+            "metaDescription": null,
+            "slug": "year-end-accounts",
+            "id": 3,
+            "children": [],
+            "media": null
+          },
+          {
+            "name": "Bookkeeping",
+            "headerText": null,
+            "footerText": null,
+            "metaTitle": null,
+            "metaDescription": null,
+            "slug": "bookkeeping",
+            "id": 4,
+            "children": [],
+            "media": null
+          },
+          {
+            "name": "Company formation",
+            "headerText": null,
+            "footerText": null,
+            "metaTitle": null,
+            "metaDescription": null,
+            "slug": "company-formation",
+            "id": 5,
+            "children": [],
+            "media": null
+          },
+          {
+            "name": "Annual filing",
+            "headerText": null,
+            "footerText": null,
+            "metaTitle": null,
+            "metaDescription": null,
+            "slug": "annual-filing",
+            "id": 6,
+            "children": [],
+            "media": null
+          },
+          {
+            "name": "Construction Industry Scheme returns",
+            "headerText": null,
+            "footerText": null,
+            "metaTitle": null,
+            "metaDescription": null,
+            "slug": "construction-industry-scheme-returns",
+            "id": 8,
+            "children": [],
+            "media": null
+          },
+          {
+            "name": "Confirmation statement filing",
+            "headerText": null,
+            "footerText": null,
+            "metaTitle": null,
+            "metaDescription": null,
+            "slug": "confirmation-statement-filing",
+            "id": 9,
+            "children": [],
+            "media": null
+          }
+        ],
+        "media": {
+          "id": 1,
+          "fileName": "ce95b0cbbbbe08e8c58b23b33d1ad2b498ecd047.png"
+        }
+      },
+      "duration": "PT1H",
+      "id": 1096303468,
+      "price": 1000
+    }
+  ],
+  "_links": {
+    "listing": {
+      "href": "/api/v1/admin/listings/1624130539"
+    },
+    "user": {
+      "href": "/api/v1/admin/users/1207131497"
+    }
+  }
+}

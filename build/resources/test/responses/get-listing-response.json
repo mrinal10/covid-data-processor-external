@@ -1,0 +1,181 @@
+{
+  "price": 500,
+  "status": "published",
+  "certified": null,
+  "minDuration": null,
+  "maxDuration": null,
+  "cancellationPolicy": 2,
+  "averageRating": null,
+  "adminNotation": null,
+  "availabilitiesUpdatedAt": null,
+  "title": "Test Accounting service",
+  "description": "test description for service",
+  "rules": "additional rule 1 \r\n\r\nadditional rule 2",
+  "slug": "test-accounting-service-1624130539",
+  "id": 1624130539,
+  "location": {
+    "country": "GB",
+    "city": "London",
+    "zip": null,
+    "route": null,
+    "streetNumber": null,
+    "additionalInfo": null
+  },
+  "images": [],
+  "discounts": [],
+  "createdAt": "2021-04-19T09:36:06+00:00",
+  "updatedAt": "2021-04-19T09:44:40+00:00",
+  "attachments": [
+    {
+      "id": 0,
+      "originalName": "Swetha-Chenna-Bill.pdf",
+      "fileName": "c1fd69d2cf4b16d9a028201126f6af2d5b4e4171.pdf",
+      "previewName": "/uploads/listings/attachments/c1fd69d2cf4b16d9a028201126f6af2d5b4e4171.pdf.thumb.jpg",
+      "createdAt": "2021-04-19T09:36:06+00:00",
+      "sort": 1
+    }
+  ],
+  "videos": [],
+  "services": [
+    {
+      "title": "Book a Room",
+      "description": "We will book the best view room",
+      "status": "visible",
+      "sort": 0,
+      "createdAt": "2021-04-19T09:36:06+00:00",
+      "updatedAt": "2021-04-19T09:38:54+00:00",
+      "category": {
+        "name": "Bookkeeping",
+        "headerText": null,
+        "footerText": null,
+        "metaTitle": null,
+        "metaDescription": null,
+        "slug": "bookkeeping",
+        "id": 4,
+        "children": [],
+        "media": null
+      },
+      "duration": "PT1M",
+      "id": 686088952,
+      "price": 500,
+      "quantityMin": 1,
+      "quantityMax": 1
+    },
+    {
+      "title": "Currency exchange",
+      "description": "Currency exchange at hotel",
+      "status": "visible",
+      "sort": 1,
+      "createdAt": "2021-04-19T09:38:54+00:00",
+      "updatedAt": "2021-04-19T09:38:54+00:00",
+      "category": {
+        "name": "Accounting",
+        "headerText": null,
+        "footerText": null,
+        "metaTitle": null,
+        "metaDescription": null,
+        "slug": "accounting",
+        "id": 2,
+        "children": [
+          {
+            "name": "Comprehensive accounting",
+            "headerText": null,
+            "footerText": null,
+            "metaTitle": null,
+            "metaDescription": null,
+            "slug": "comprehensive-accounting",
+            "id": 10,
+            "children": [],
+            "media": null
+          },
+          {
+            "name": "Year end accounts",
+            "headerText": null,
+            "footerText": null,
+            "metaTitle": null,
+            "metaDescription": null,
+            "slug": "year-end-accounts",
+            "id": 3,
+            "children": [],
+            "media": null
+          },
+          {
+            "name": "Bookkeeping",
+            "headerText": null,
+            "footerText": null,
+            "metaTitle": null,
+            "metaDescription": null,
+            "slug": "bookkeeping",
+            "id": 4,
+            "children": [],
+            "media": null
+          },
+          {
+            "name": "Company formation",
+            "headerText": null,
+            "footerText": null,
+            "metaTitle": null,
+            "metaDescription": null,
+            "slug": "company-formation",
+            "id": 5,
+            "children": [],
+            "media": null
+          },
+          {
+            "name": "Annual filing",
+            "headerText": null,
+            "footerText": null,
+            "metaTitle": null,
+            "metaDescription": null,
+            "slug": "annual-filing",
+            "id": 6,
+            "children": [],
+            "media": null
+          },
+          {
+            "name": "Construction Industry Scheme returns",
+            "headerText": null,
+            "footerText": null,
+            "metaTitle": null,
+            "metaDescription": null,
+            "slug": "construction-industry-scheme-returns",
+            "id": 8,
+            "children": [],
+            "media": null
+          },
+          {
+            "name": "Confirmation statement filing",
+            "headerText": null,
+            "footerText": null,
+            "metaTitle": null,
+            "metaDescription": null,
+            "slug": "confirmation-statement-filing",
+            "id": 9,
+            "children": [],
+            "media": null
+          }
+        ],
+        "media": {
+          "id": 1,
+          "fileName": "ce95b0cbbbbe08e8c58b23b33d1ad2b498ecd047.png"
+        }
+      },
+      "duration": "PT1H",
+      "id": 2037432771,
+      "price": 1000,
+      "quantityMin": 1,
+      "quantityMax": 10
+    }
+  ],
+  "_links": {
+    "categories": {
+      "href": "/api/v1/admin/listings/categories?id=1624130539"
+    },
+    "attributes": {
+      "href": "/api/v1/admin/listings/attributes?id=1624130539"
+    },
+    "user": {
+      "href": "/api/v1/admin/users/2061500700"
+    }
+  }
+}

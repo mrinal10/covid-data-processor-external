@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.homelane.service.DataserviceUTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-08-15T10:41:45" hostname="TIDE-HYD-L199.local" time="0.894">
+  <properties/>
+  <testcase name="searchDateStateSpecificDataTest()" classname="co.homelane.service.DataserviceUTest" time="0.884"/>
+  <testcase name="searchStateSpecificDataTest()" classname="co.homelane.service.DataserviceUTest" time="0.005"/>
+  <testcase name="searchDateSpecificDataTest()" classname="co.homelane.service.DataserviceUTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

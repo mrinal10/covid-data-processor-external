@@ -1,0 +1,163 @@
+clone:
+  depth: full              # SonarCloud scanner needs the full history to assign issues properly
+
+image:
+  name: r.tide.co/tide-java-11:latest
+  username: $DOCKER_USER
+  password: $DOCKER_PASSWORD
+
+definitions:
+  steps:
+    - step: &step-unit-tests
+        name: Unit tests
+        caches:
+          - gradle
+          - gradlewrapper
+        script:
+          - bin/unit-tests.sh
+        artifacts:
+          - build/**
+    - step: &step-integration-tests
+        name: Integration tests
+        caches:
+          - gradle
+          - gradlewrapper
+        services:
+          - postgres
+        script:
+          - bin/integration-tests.sh
+        artifacts:
+          - build/**
+    - step: &step-api-tests
+        name: API tests
+        caches:
+          - gradle
+          - gradlewrapper
+        script:
+          - bin/api-tests.sh
+        artifacts:
+          - build/**
+    - step: &step-sonarcloud
+        name: SonarCloud analysis
+        caches:
+          - gradle
+          - gradlewrapper
+          - sonar
+        script:
+          - bin/sonarcloud.sh
+        artifacts:
+          - build/**
+    - step: &step-snyk
+        name: Snyk Dependency Scan
+        image:
+          name: r.tide.co/build-base:deployer
+          username: $DOCKER_USER
+          password: $DOCKER_PASSWORD
+        caches:
+          - gradle
+          - gradlewrapper
+        script:
+          - /build/snyk-premerge-dependency-scan.sh
+          - pipe: snyk/snyk-scan:0.4.4
+            variables:
+              CODE_INSIGHTS_RESULTS: "true"
+              SNYK_TEST_JSON_INPUT: $SNYK_TEST_JSON_FILENAME
+  services:
+    postgres:
+      image: postgres
+      environment:
+        POSTGRES_DB: homelane
+        POSTGRES_HOST_AUTH_METHOD: trust
+  caches:
+    sonar: ~/.sonar/cache  # Caching SonarCloud artifacts will speed up your build
+    gradlewrapper: ~/.gradle/wrapper
+
+pipelines:
+  pull-requests:
+    '**':
+      - parallel:
+          - step: *step-unit-tests
+          - step: *step-integration-tests
+          - step: *step-api-tests
+      - parallel:
+          - step: *step-snyk
+          - step: *step-sonarcloud
+  branches:
+    master:
+      - parallel:
+          - step: *step-unit-tests
+          - step: *step-integration-tests
+          - step: *step-api-tests
+      - step: *step-sonarcloud
+      # No need for Snyk - it's run during the Docker build step
+      - step:
+          name: Build
+          caches:
+            - gradle
+            - gradlewrapper
+          script:
+            - bin/build.sh
+          artifacts:
+            - build/libs/** # Only need the JAR file for Docker build that follows
+      - step:
+          name: Docker build
+          image:
+            name: r.tide.co/build-base:deployer
+            username: $DOCKER_USER
+            password: $DOCKER_PASSWORD
+          services:
+            - docker
+          caches:
+            - docker
+          script:
+            - /build/docker-build.sh
+      - step:
+          name: Deploy to WIP
+          deployment: wip
+          image:
+            name: r.tide.co/build-base:wip
+            username: $DOCKER_USER
+            password: $DOCKER_PASSWORD
+          script:
+            - /build/ansible/deploy.sh
+      - step:
+          name: Deploy to Staging
+          trigger: manual
+          deployment: staging
+          image:
+            name: r.tide.co/build-base:staging
+            username: $DOCKER_USER
+            password: $DOCKER_PASSWORD
+          script:
+            - /build/ansible/deploy.sh
+      - step:
+          name: Deploy to Production
+          trigger: manual
+          deployment: prod
+          image:
+            name: r.tide.co/build-base:prod
+            username: $DOCKER_USER
+            password: $DOCKER_PASSWORD
+          script:
+            - /build/ansible/deploy.sh
+  custom:
+    rollback:
+      - step:
+          name: Staging Rollback
+          deployment: staging
+          image:
+            name: r.tide.co/build-base:deployer
+            username: $DOCKER_USER
+            password: $DOCKER_PASSWORD
+          script:
+            - /build/ansible/deploy.sh "rollback"
+      - step:
+          name: Production Rollback
+          trigger: manual
+          deployment: prod
+          image:
+            name: r.tide.co/build-base:prod
+            username: $DOCKER_USER
+            password: $DOCKER_PASSWORD
+          script:
+            - /build/ansible/deploy.sh "rollback"
