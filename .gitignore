@@ -1,0 +1,13 @@
+
+.gradle/7.1.1/executionHistory/executionHistory.bin
+.gradle/7.1.1/executionHistory/executionHistory.lock
+.gradle/7.1.1/fileHashes/fileHashes.bin
+.gradle/7.1.1/fileHashes/fileHashes.lock
+.gradle/7.1.1/fileHashes/resourceHashesCache.bin
+.gradle/buildOutputCleanup/buildOutputCleanup.lock
+build/classes/java/main/com/homelane/api/DataController.class
+build/classes/java/main/com/homelane/config/SwaggerConfig.class
+build/classes/java/main/com/homelane/covidexternaldata/CovidExternalDataApplication.class
+build/libs/covid-data-processor-external-0.0.1-SNAPSHOT-plain.jar
+build/libs/covid-data-processor-external-0.0.1-SNAPSHOT.jar
+build/reports/tests/test/index.html
