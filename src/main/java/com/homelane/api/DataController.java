@@ -15,11 +15,6 @@ public class DataController {
         this.dataService = dataService;
     }
 
-    @GetMapping("/")
-    public String hello() {
-        return "Hello World";
-    }
-
     @GetMapping("/get_date_info/{date}")
     public DateWiseData getDateSpecificdata(@PathVariable("date") String date) {
         return dataService.searchDateSpecificData(date);

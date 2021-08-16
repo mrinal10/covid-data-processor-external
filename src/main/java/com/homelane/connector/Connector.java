@@ -14,7 +14,8 @@ public class Connector {
     RestTemplate restTemplate;
 
     public ResponseEntity<DateWiseData> getDateSpecificData(String date) {
-        return restTemplate.exchange("http://localhost:8080/rest/api/v1/internal-data/on-date/"+date,
+        return restTemplate.exchange("https://covid-data-internal.herokuapp.com/rest/api/v1/internal-data/on-date/"
+                        +date,
                 HttpMethod.GET, null, DateWiseData.class);
     }
 }
